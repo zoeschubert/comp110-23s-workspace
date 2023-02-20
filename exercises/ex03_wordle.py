@@ -16,7 +16,7 @@ def main() -> None:
     if secret == guess:
         print(f"You won in {turns-1}/6 turns!")
     else:
-        print("Sorry, try again tomorrow!")
+        print("X/6 - Sorry, try again tomorrow!")
     
 
 
@@ -55,7 +55,7 @@ def emojified(guess: str, secret: str)->str:
 
 def input_guess(exp_length: int)->str: 
     """Check the length of the input guess"""
-    guess: str = input(f"Enter a {exp_length} character word: ")
+    guess = input(f"Enter a {exp_length} character word: ")
     while len(guess) != exp_length: 
         #check if word is expected length
         guess: str = input(f"That wasn't {exp_length} chars! Try again: ") 
