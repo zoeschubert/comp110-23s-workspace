@@ -2,17 +2,20 @@
 __author__ = "730466642"
 
 
-def all(x: list[int], y: int) -> bool:
+def all(list: list[int], number: int) -> bool:
     """Compare all numbers in a list with a given number."""
-    length: int = len(x)
+    length: int = len(list)
     i: int = 0
+    if length == 0:
+        # list is empty
+        return False
     while (length > i):
         # the index does not exceed the length of the list
-        if x[i] == y and length != 0:
+        if list[i] == number:
             i += 1
-        else:  # the integer does not match all number in the list or it is empty
+        else:  # the integer does not match all numbers in the list
             return False
-    return True
+    return False
 
 
 def max(input: list[int]) -> int:
@@ -33,8 +36,11 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
     i: int = 0
     length1: int = len(list1)
     length2: int = len(list2)
-    while (i < length1 and i < length2) and (length1 > 0 and length2 > 0):
-        if list1[i] == list2[i] and length1 == length2: 
+    if length1 != length2: 
+        # the lists are not the same length
+        return False
+    while i < length1 and i < length2:
+        if list1[i] == list2[i]:
             i += 1
         else: 
             return False
