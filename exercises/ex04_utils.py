@@ -6,12 +6,11 @@ def all(x: list[int], y: int)->bool:
     """Compare all numbers in a list with a given number."""
     length: int = len(x)
     i: int = 0
-    while (length > i) and (0 < length):
-        #The list is not empty and the index does not exceed the length of the list
-        if x[i] == y:
-            i+=1
-        else:
-            #The integer does not match all number in the list
+    while (length > i):
+        #the index does not exceed the length of the list
+        if x[i] == y and length != 0:
+            i += 1
+        else: #the integer does not match all number in the list or it is empty
             return False
     return True
 
@@ -23,8 +22,8 @@ def max(input: list[int])->int:
     max: int = input[0]
     i: int = 0
     while (i < len(input) - 1):
-        if max < input[i+1]:
-            max = input[i+1]
+        if max < input[i + 1]:
+            max = input[i + 1]
         i += 1
     return max
                  
