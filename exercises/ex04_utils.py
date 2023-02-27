@@ -1,5 +1,5 @@
 """List Utility Functions."""
-__author__ : "730466642"
+__author__ = "730466642"
 
 
 def all(x: list[int], y: int)->bool:
@@ -10,7 +10,7 @@ def all(x: list[int], y: int)->bool:
         #The list is not empty and the index does not exceed the length of the list
         if x[i] == y:
             i+=1
-        else :
+        else:
             #The integer does not match all number in the list
             return False
     return True
@@ -40,6 +40,3 @@ def is_equal(list1: list[int], list2: list[int])->bool:
         else: 
             return False
     return True
-
-
-
