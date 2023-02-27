@@ -15,7 +15,7 @@ def all(list: list[int], number: int) -> bool:
             i += 1
         else:  # the integer does not match all numbers in the list
             return False
-    return False
+    return True
 
 
 def max(input: list[int]) -> int:
