@@ -47,22 +47,22 @@ def test_many_concat() -> None:
 def test_empty_sub() -> None: 
     """Check if the list is empty."""
     test_list: list[int] = []
-    idx1: int = 1
-    idx2: int = 2
+    idx1: int = [1]
+    idx2: int = [2]
     assert sub(test_list, idx1, idx2) == []
 
 
 def test_many_sub() -> None: 
     """Create a subset from a list."""
     test_list: list[int] = [1, 2, 3, 4, 5]
-    idx1: int = 2
-    idx2: int = 3
+    idx1: int = [2]
+    idx2: int = [3]
     assert sub(test_list, idx1, idx2) == [3]
 
 
 def test_few_sub() -> None:
     """Create a subset from another list."""
     test_list: list[int] = [4, 5, 6, 7]
-    idx1: int = 1
-    idx2: int = 3
+    idx1: int = [1]
+    idx2: int = [3]
     assert sub(test_list, idx1, idx2) == [5, 6]
