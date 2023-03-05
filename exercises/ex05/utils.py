@@ -23,13 +23,12 @@ def concat(list1: list[int], list2: list[int]) -> list[int]:
 
 def sub(input: list[int], start: int, end: int) -> list[int]:
     """Select a section of a list."""
-    length: int = len(input)
     new_list: list[int] = []
     if start < 0:
         start = 0
-    if end > length:
-        end = length
-    if (length == 0) or (start >= length) or (end <= 0):
+    if end > len(input):
+        end = len(input)
+    if (len(input) == 0) or (start >= len(input)) or (end <= 0):
         return new_list
     while start < end:
         new_list.append(input[start])
