@@ -33,7 +33,7 @@ def main() -> None:
                 if location == "leave":
                     goodbye()
     if points >= 30 and location != "done":
-            print(f"After {points} points accumulated, you found the treasure {TREASUREONE}{TREASURETWO}!")
+        print(f"After {points} points accumulated, you found the treasure {TREASUREONE}{TREASURETWO}!")
     
 
 def greet() -> None:
@@ -54,7 +54,7 @@ def island() -> None:
         points += 15
     elif choice == "river":
         points += 10
-    if points < 30: # the loop keeps going because player has not reached point threshold
+    if points < 30:  # the loop keeps going because player has not reached point threshold
         location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
     
 
@@ -68,8 +68,8 @@ def mountain(points: int) -> int:
     if choice == "dig": 
         points += 15
     elif choice == "climb":
-            points -= randint(0, 10)
-    if points < 30: # the loop keeps going because player has not reached point threshold
+        points -= randint(0, 10)
+    if points < 30:  # the loop keeps going because player has not reached point threshold
         location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
     return points
 
