@@ -21,18 +21,19 @@ def main() -> None:
     global points
     global location
     greet()
-    print(f"Alright {player}, you can go to the island, the mountain, or the mystery location. ")
+    print(f"Alright {player}, you can go to the island, the mountain, or neither. ")
     location = input("Choose 'mountain' or 'island' to go forth, or 'leave' if you wish to give up on this journey. ")
-    while points <= 30 and location != "done":
+    while points < 30 and location != "done":
         if location == "island":
             island()
         else:
             if location == "mountain":
-                mountain(points)
+                points = mountain(points)
             else:  # this is where the player exits
                 if location == "leave":
                     goodbye()
-    print(f"After {points} points accumulated, you found the treasure {TREASUREONE}{TREASURETWO}!")
+    if points >= 30 and location != "done":
+            print(f"After {points} points accumulated, you found the treasure {TREASUREONE}{TREASURETWO}!")
     
 
 def greet() -> None:
@@ -53,7 +54,8 @@ def island() -> None:
         points += 15
     elif choice == "river":
         points += 10
-    location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
+    if points < 30: # the loop keeps going because player has not reached point threshold
+        location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
     
 
 def mountain(points: int) -> int:
@@ -66,8 +68,9 @@ def mountain(points: int) -> int:
     if choice == "dig": 
         points += 15
     elif choice == "climb":
-        points -= randint(0, 10)
-    location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
+            points -= randint(0, 10)
+    if points < 30: # the loop keeps going because player has not reached point threshold
+        location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
     return points
 
 
@@ -76,7 +79,7 @@ def goodbye() -> None:
     global player
     global points
     global location
-    print(f"Sorry, {player}, you did not find the treasure. Goodbye!")
+    print(f"Sorry, {player}, you got {points} points and did not find the treasure. Goodbye!")
     location = "done"
 
 
