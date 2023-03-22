@@ -29,7 +29,7 @@ def main() -> None:
         else:
             if location == "mountain":
                 mountain(points)
-            else: #this is where the player exits
+            else:  # this is where the player exits
                 if location == "leave":
                     goodbye()
     print(f"After {points} points accumulated, you found the treasure {TREASUREONE}{TREASURETWO}!")
@@ -66,9 +66,10 @@ def mountain(points: int) -> int:
     if choice == "dig": 
         points += 15
     elif choice == "climb":
-        points -= randint(0,10)
+        points -= randint(0, 10)
     location = input(f"Okay traveler, you now have {points} points. Choose again from the 3 location choices. ")
     return points
+
 
 def goodbye() -> None: 
     """Bid the player farewell since they chose to leave."""
