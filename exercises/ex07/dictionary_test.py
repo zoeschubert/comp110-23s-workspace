@@ -7,8 +7,8 @@ from ex07.dictionary import invert, favorite_color, count
 
 def test_empty_invert() -> None:
     """Check if the KeyError Works empty."""
-    inputdict: dict[str, str] = {'a':'b', 'a':'c'}
-    assert invert(inputdict) == {"A key cannot occur more than once in the dictionary."}
+    inputdict: dict[str, str] = {}
+    assert invert(inputdict) == {}
 
 
 def test_invert_pairs() -> None:
@@ -31,7 +31,7 @@ def test_favorite_color_same() -> None:
 
 def test_favorite_color_one() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie':'blue'}
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie': 'blue'}
     assert favorite_color(colors) == 'purple'
 
 
