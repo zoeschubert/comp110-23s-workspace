@@ -23,10 +23,10 @@ def test_invert_more_pairs() -> None:
     assert invert(inputdict) == {'b': 'a', 'd': 'c', 'f': 'e'}
 
 
-def test_favorite_color_same() -> None:
+def test_favorite_color_empty() -> None:
     """Check if the input dict is empty."""
-    colors: dict[str, str] = {'zoe': 'blue', 'gabi': 'blue', 'grace': 'blue'}
-    assert favorite_color(colors) == 'blue'
+    colors: dict[str, str] = {}
+    assert favorite_color(colors) == ""
 
 
 def test_favorite_color_one() -> None:

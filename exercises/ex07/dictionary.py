@@ -6,8 +6,9 @@ def invert(inputdict: dict[str, str]) -> dict[str, str]:
     """Invert the keys with the values."""
     new_dict: dict[str, str] = {}
     for key in inputdict:
-        for key in new_dict:
-            raise KeyError("A key cannot occur more than once in the dictionary.")
+        for keys in new_dict:
+            if inputdict[key] == keys:
+                raise KeyError("A key cannot occur more than once in the dictionary.")
         new_dict[inputdict[key]] = key
     return new_dict
 
@@ -19,7 +20,7 @@ def favorite_color(colors: dict[str, str]) -> str:
     popular: str = ""
     for key in colors:
         new_list.append(colors[key])
-    colors_count: int = count(new_list)
+    colors_count = count(new_list)
     for i in colors_count:
         if colors_count[i] > max:
             max = colors_count[i]
