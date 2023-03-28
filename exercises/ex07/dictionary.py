@@ -3,7 +3,7 @@ __author__ = "730466642"
 
 
 def invert(inputdict: dict[str, str]) -> dict[str, str]:
-    """Invert the keys with the values"""
+    """Invert the keys with the values."""
     new_dict = []
     for key, value in inputdict:
         new_dict[value] == key
@@ -28,7 +28,7 @@ def favorite_color(colors: dict[str, str]) -> str:
     return popular
 
 
-def count(inputlist: list[str]) -> dict[str, str]:
+def count(inputlist: list[str]) -> dict[str, int]:
     """Return a dict that counts the occurrence of values in list."""
     new_dict: dict[str, int] = []
     for item in inputlist:
