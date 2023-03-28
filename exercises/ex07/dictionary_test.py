@@ -11,16 +11,16 @@ def test_empty_invert() -> None:
     assert invert(inputdict) == []
 
 
-def test_invert_one_pair() -> None:
+def test_invert_two_pair() -> None:
     """Invert one key/value pair."""
-    inputdict: dict[str, str] = ['hello', 'world']
-    assert invert(inputdict) == ['world', 'hello']
+    inputdict: dict[str, str] = {'a': 'b', 'c': 'd'}
+    assert invert(inputdict) == {'b': 'a', 'd': 'c'}
 
 
 def test_invert_many_pairs() -> None: 
     """Invert many key/value pairs."""
-    inputdict: dict[str, str] = {'a': 'b', 'c': 'd', 'e': 'f'}
-    assert invert(inputdict) == {'b': 'a', 'd': 'c', 'f': 'e'}
+    inputdict: dict[str, str] = {'red': 'orange', 'green': 'blue'}
+    assert invert(inputdict) == {'orange': 'red', 'blue': 'green'}
 
 
 def test_favorite_color_empty() -> None:
