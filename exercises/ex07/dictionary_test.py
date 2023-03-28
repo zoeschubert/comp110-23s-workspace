@@ -28,23 +28,23 @@ def test_invert_many_pairs() -> None:
 
 def test_favorite_color_empty() -> None:
     """Check if the input dict is empty."""
-    colors: dict[str, str] = []
+    colors: dict[str, str] = {'zoe': 'blue', 'gabi': 'blue', 'grace': 'blue'}
     # assert that the dict is empty
-    assert favorite_color(colors) == []
+    assert favorite_color(colors) == 'blue'
 
 
 def test_favorite_color_one() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'blue', 'gabi': 'blue', 'grace': 'blue'}
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie': 'blue', 'hayden': 'pink'}
     # assert the most frequently occurring color
-    assert favorite_color(colors) == 'blue'
+    assert favorite_color(colors) == 'purple'
 
 
 def test_favorite_color_two() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie': 'blue', 'hayden': 'pink'}
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'yellow', 'grace': 'yellow', 'annie': 'blue', 'hayden': 'yellow'}
     # assert the first occurrence in case of a tie
-    assert favorite_color(colors) == 'purple'
+    assert favorite_color(colors) == 'yellow'
 
 
 def test_count_empty() -> None:
