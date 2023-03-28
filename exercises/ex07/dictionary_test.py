@@ -7,62 +7,53 @@ from ex07.dictionary import invert, favorite_color, count
 
 def test_empty_invert() -> None:
     """Check if the input dict is empty."""
-    inputdict: dict[str, str] = []
-    # assert that the dict is empty
-    assert invert(inputdict) == []
+    inputdict: dict[str, str] = {}
+    assert invert(inputdict) == {}
 
 
-def test_invert_two_pair() -> None:
+def test_invert_pairs() -> None:
     """Invert one key/value pair."""
-    inputdict: dict[str, str] = {'a': 'b'}
-    # flip the key and value of the single pair
-    assert invert(inputdict) == {'b': 'a'}
+    inputdict: dict[str, str] = {'a': 'b', 'b': 'a'}
+    assert invert(inputdict) == {'b': 'a', 'a': 'b'}
 
 
-def test_invert_many_pairs() -> None: 
+def test_invert_more_pairs() -> None: 
     """Invert many key/value pairs."""
-    inputdict: dict[str, str] = {'red': 'orange', 'green': 'blue'}
-    # flip the key and value of many pairs
-    assert invert(inputdict) == {'orange': 'red', 'blue': 'green'}
+    inputdict: dict[str, str] = {'a': 'b', 'c': 'd', 'e': 'f'}
+    assert invert(inputdict) == {'b': 'a', 'd': 'c', 'f': 'e'}
 
 
 def test_favorite_color_empty() -> None:
     """Check if the input dict is empty."""
-    colors: dict[str, str] = {'zoe': 'blue', 'gabi': 'blue', 'grace': 'blue'}
-    # assert that the dict is empty
-    assert favorite_color(colors) == 'blue'
+    colors: dict[str, str] = {}
+    assert favorite_color(colors) == {}
 
 
 def test_favorite_color_one() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie': 'blue', 'hayden': 'pink'}
-    # assert the most frequently occurring color
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'blue', 'grace': 'purple'}
     assert favorite_color(colors) == 'purple'
 
 
 def test_favorite_color_two() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'yellow', 'grace': 'yellow', 'annie': 'blue', 'hayden': 'yellow'}
-    # assert the first occurrence in case of a tie
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'yellow', 'grace': 'yellow'}
     assert favorite_color(colors) == 'yellow'
 
 
 def test_count_empty() -> None:
     """Check if input list is empty."""
     inputlist: list[str] = []
-    # assert that the list is empty
     assert count(inputlist) == []
 
 
 def test_count_letters() -> None:
     """Check if the correct dict is made."""
     inputlist: list[str] = ('a', 'a', 'b', 'c', 'c', 'c', 'd')
-    # assign a number of occurrences
     assert count(inputlist) == {'a': 2, 'b': 1, 'c': 3, 'd': 1}
 
 
 def test_count_colors() -> None:
     """Check if correct dict is made."""
     inputlist: list[str] = ('red', 'orange', 'green', 'red', 'green', 'green')
-    # assign a number of occurrences
     assert count(inputlist) == {'red': 2, 'orange': 1, 'green': 3}

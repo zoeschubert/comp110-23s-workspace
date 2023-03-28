@@ -4,44 +4,35 @@ __author__ = "730466642"
 
 def invert(inputdict: dict[str, str]) -> dict[str, str]:
     """Invert the keys with the values."""
-    new_dict = dict[str, str] = []
-    idx: int = 0
-    while idx < len(inputdict):
-        for key in inputdict:
-        # invert the key with its value
-            new_dict[idx] == key
-            idx += 1
-        if key in inputdict > 1:
-        # raise an error if key occurs more than once
-            raise KeyError(f"{key} occurs more than once in the dictionary.")
-    return new_dict  
+    new_dict: dict[str, str] = {}
+    for key in inputdict:
+        for key in new_dict:
+            raise KeyError("A key cannot occur more than once in the dictionary")
+        new_dict[inputdict[key]] = key
+    return new_dict
 
 
 def favorite_color(colors: dict[str, str]) -> str:
     """Return the most popular favorite color."""
-    count: dict[str, str] = {}
+    new_list: list[str] = []
     max: int = 0
     popular: str = ""
     for key in colors:
-        if key not in count:
-            count[key] = 0
-        else:  # increase the count by one
-            count[key] += 1
-        if count[key] > max:
-            max == count[key]
-            popular == key
+        new_list.append(colors[key])
+    colors_count = count(new_list)
+    for i in colors_count:
+        if colors_count[i] > max:
+            max = colors_count[i]
+            popular = i
     return popular
 
 
 def count(inputlist: list[str]) -> dict[str, int]:
     """Return a dict that counts the occurrence of values in list."""
-    new_dict: dict[str, int] = []
-    idx: int = 0
-    while idx < len(inputlist):
-        for item in inputlist:
-            if item in new_dict: 
-                new_dict[idx] += 1
-            else:  # the item is only seen once
-                new_dict[idx] == 1
-            idx += 1
+    new_dict: dict[str, int] = {}
+    for item in inputlist:
+        if item in new_dict: 
+            new_dict[item] += 1
+        else:
+            new_dict[item] == 1
     return new_dict
