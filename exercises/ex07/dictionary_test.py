@@ -6,9 +6,9 @@ from ex07.dictionary import invert, favorite_color, count
 
 
 def test_empty_invert() -> None:
-    """Check if the input dict is empty."""
-    inputdict: dict[str, str] = {}
-    assert invert(inputdict) == {}
+    """Check if the KeyError Works empty."""
+    inputdict: dict[str, str] = {'a':'b', 'a':'c'}
+    assert invert(inputdict) == {"A key cannot occur more than once in the dictionary."}
 
 
 def test_invert_pairs() -> None:
@@ -23,15 +23,15 @@ def test_invert_more_pairs() -> None:
     assert invert(inputdict) == {'b': 'a', 'd': 'c', 'f': 'e'}
 
 
-def test_favorite_color_empty() -> None:
+def test_favorite_color_same() -> None:
     """Check if the input dict is empty."""
-    colors: dict[str, str] = {}
-    assert favorite_color(colors) == {}
+    colors: dict[str, str] = {'zoe': 'blue', 'gabi': 'blue', 'grace': 'blue'}
+    assert favorite_color(colors) == 'blue'
 
 
 def test_favorite_color_one() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'blue', 'grace': 'purple'}
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie':'blue'}
     assert favorite_color(colors) == 'purple'
 
 
@@ -49,11 +49,11 @@ def test_count_empty() -> None:
 
 def test_count_letters() -> None:
     """Check if the correct dict is made."""
-    inputlist: list[str] = ('a', 'a', 'b', 'c', 'c', 'c', 'd')
-    assert count(inputlist) == {'a': 2, 'b': 1, 'c': 3, 'd': 1}
+    inputlist: list[str] = ('a', 'a', 'b')
+    assert count(inputlist) == {'a': 2, 'b': 1}
 
 
 def test_count_colors() -> None:
     """Check if correct dict is made."""
-    inputlist: list[str] = ('red', 'orange', 'green', 'red', 'green', 'green')
-    assert count(inputlist) == {'red': 2, 'orange': 1, 'green': 3}
+    inputlist: list[str] = ('a', 'a', 'b', 'c', 'c', 'c', 'd')
+    assert count(inputlist) == {'a': 2, 'b': 1, 'c': 3, 'd': 1}
