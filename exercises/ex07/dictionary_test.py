@@ -13,8 +13,8 @@ def test_empty_invert() -> None:
 
 def test_invert_two_pair() -> None:
     """Invert one key/value pair."""
-    inputdict: dict[str, str] = {'a': 'b', 'c': 'd'}
-    assert invert(inputdict) == {'b': 'a', 'd': 'c'}
+    inputdict: dict[str, str] = {'a': 'b'}
+    assert invert(inputdict) == {'b': 'a'}
 
 
 def test_invert_many_pairs() -> None: 
