@@ -2,7 +2,7 @@
 __author__ = "730466642"
 
 
-from ex07.dictionary import invert, favorite_color, count
+from dictionary import invert, favorite_color, count
 
 
 def test_empty_invert() -> None:
@@ -44,7 +44,7 @@ def test_favorite_color_two() -> None:
 def test_count_empty() -> None:
     """Check if input list is empty."""
     inputlist: list[str] = []
-    assert count(inputlist) == []
+    assert count(inputlist) == {}
 
 
 def test_count_letters() -> None:

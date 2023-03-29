@@ -35,5 +35,5 @@ def count(inputlist: list[str]) -> dict[str, int]:
         if item in new_dict: 
             new_dict[item] += 1
         else:
-            new_dict[item] == 1
+            new_dict[item] = 1
     return new_dict
