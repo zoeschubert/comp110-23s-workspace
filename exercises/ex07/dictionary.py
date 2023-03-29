@@ -20,7 +20,7 @@ def favorite_color(colors: dict[str, str]) -> str:
     popular: str = ""
     for key in colors:
         new_list.append(colors[key])
-    colors_count = count(new_list)
+    colors_count: int = count(new_list)
     for i in colors_count:
         if colors_count[i] > max:
             max = colors_count[i]

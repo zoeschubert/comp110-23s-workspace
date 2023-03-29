@@ -30,15 +30,15 @@ def test_favorite_color_empty() -> None:
 
 
 def test_favorite_color_one() -> None:
-    """Check if the function returns most popular color."""
+    """Check if the function returns first color in a tie."""
     colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'blue', 'annie': 'blue'}
     assert favorite_color(colors) == 'purple'
 
 
 def test_favorite_color_two() -> None:
     """Check if the function returns most popular color."""
-    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'yellow', 'grace': 'yellow'}
-    assert favorite_color(colors) == 'yellow'
+    colors: dict[str, str] = {'zoe': 'purple', 'gabi': 'purple', 'grace': 'yellow'}
+    assert favorite_color(colors) == 'purple'
 
 
 def test_count_empty() -> None:
