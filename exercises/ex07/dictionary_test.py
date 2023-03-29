@@ -49,11 +49,11 @@ def test_count_empty() -> None:
 
 def test_count_letters() -> None:
     """Check if the correct dict is made."""
-    inputlist: list[str] = ('a', 'a', 'b')
+    inputlist: list[str] = ['a', 'a', 'b']
     assert count(inputlist) == {'a': 2, 'b': 1}
 
 
 def test_count_colors() -> None:
     """Check if correct dict is made."""
-    inputlist: list[str] = ('a', 'a', 'b', 'c', 'c', 'c', 'd')
+    inputlist: list[str] = ['a', 'a', 'b', 'c', 'c', 'c', 'd']
     assert count(inputlist) == {'a': 2, 'b': 1, 'c': 3, 'd': 1}
